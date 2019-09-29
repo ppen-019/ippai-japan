@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -50,7 +50,14 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6|max:255|confirmed',
+            'gender' => 'required|string',
+            'birthday' => 'required|before:today',
+            'country' => 'nullable|string',
+            'native_language' => 'required|string',
+            'second_language' => 'nullable|string',
+            'japanese_level' => 'required_unless:native_language,japanese',
+            'self_introduction' => 'nullable|string'
         ]);
     }
 
@@ -66,6 +73,13 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'gender' => $data['gender'],
+            'birthday' => $data['birthday'],
+            'country'=> $data['country'],
+            'native_language' => $data['native_language'],
+            'second_language' => $data['second_language'], 
+            'japanese_level' => $data['japanese_level'],
+            'self_introduction' => $data['self_introduction'],
         ]);
     }
 }
