@@ -31,10 +31,10 @@
                             <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
-                                <input id="m" type="radio" name="gender" value="m">
-                                <label for="m">Male</label>
-                                <input id="f" type="radio" name="gender" value="f">
-                                <label for="f">Female</label>
+                                <input id="male" type="radio" name="gender" value="Male">
+                                <label for="male">Male</label>
+                                <input id="female" type="radio" name="gender" value="Famele">
+                                <label for="female">Female</label>
 
                                 @if ($errors->has('gender'))
                                     <span class="help-block">

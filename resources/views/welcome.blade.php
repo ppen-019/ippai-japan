@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('content')
+
+<!--
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -7,10 +12,10 @@
 
         <title>IPPAI Japan</title>
 
-        <!-- Fonts -->
+        <!-- Fonts
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+        <!-- Styles 
         <style>
             html, body {
                 background-color: #fff;
@@ -65,7 +70,11 @@
         </style>
     </head>
     <body>
+-->
+<div class="container">
+    <div class="row">
         <div class="flex-center position-ref full-height">
+            <!--
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -76,12 +85,17 @@
                     @endauth
                 </div>
             @endif
-
+            -->
             <div class="content">
                 <div class="title m-b-md">
                     IPPAI Japan
                 </div>
             </div>
         </div>
+    </div>
+</div>
+@endsection
+<!--        
     </body>
 </html>
+-->
